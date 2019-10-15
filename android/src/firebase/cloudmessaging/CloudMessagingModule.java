@@ -145,8 +145,7 @@ public class CloudMessagingModule extends KrollModule
 		if (sound.equals("default")) {
 			soundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
 		} else if (!sound.equals("silent")) {
-			String path = ContentResolver.SCHEME_ANDROID_RESOURCE + "://" + context.getPackageName() + "/"
-						  + Utils.getResourceIdentifier("raw", sound);
+			String path = ContentResolver.SCHEME_ANDROID_RESOURCE + "://" + context.getPackageName() + "/raw/" + sound;
 			Log.d(LCAT, "createNotificationChannel with sound " + sound + " at " + path);
 			soundUri = Uri.parse(path);
 		}
